@@ -82,7 +82,7 @@ class KnownUsersFragment @Inject constructor(
 
     override fun onDestroyView() {
         knownUsersController.callback = null
-        recyclerView.cleanup()
+        knownUsersRecyclerView.cleanup()
         super.onDestroyView()
     }
 
@@ -117,7 +117,7 @@ class KnownUsersFragment @Inject constructor(
     private fun setupRecyclerView() {
         knownUsersController.callback = this
         // Don't activate animation as we might have way to much item animation when filtering
-        recyclerView.configureWith(knownUsersController, disableItemAnimation = true)
+        knownUsersRecyclerView.configureWith(knownUsersController, disableItemAnimation = true)
     }
 
     private fun setupFilterView() {
